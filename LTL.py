@@ -45,10 +45,12 @@ def wakati(text):
     # 拾う品詞を指定 「する」「ある」などが大きくなりすぎるので動詞を削った。名詞だけでいいかも？
     target_hinshi = ['名詞', '形容詞', '形容動詞']
     exclude = ['非自立', '接尾'] # 除外する品詞細分類1パラメーター
+    exclude_word = ['ない'] # 除外する単語（終止形で指定）。「ない」があまりにも大きいので。
     while node:
         if node.feature.split(',')[0] in target_hinshi:
             if node.feature.split(',')[1] not in exclude:
-                kekka += node.feature.split(',')[6] + "\n" # 活用のあるものに対して終止形のものを選ぶ
+                if node.feature.split(',')[6] not in exclude_word:
+                    kekka += node.feature.split(',')[6] + "\n" # 活用のあるものに対して終止形のものを選ぶ
         node = node.next
     return(kekka)
 
