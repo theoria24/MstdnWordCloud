@@ -24,6 +24,7 @@ def format(text):
     # HTMLタグとURLの削除
     text = re.sub("</?p>", "", text)
     text = re.sub("<a href=\"(.*?)\".*?>(.*?)</a>", "", text)
+    text = re.sub("<span class=\"(.*?)\".*?>(.*?)</span>", "", text)
     text = re.sub("<br />", '\n', text)
     return(text)
 
@@ -55,9 +56,8 @@ def wordcloud(text):
     filename = datetime.now().strftime("%Y%m%d-%H%M%S")
     # 背景色や画像の大きさ、出力場所の指定
     wordcloud = WordCloud(background_color="white", font_path="./Kazesawa-Regular.ttf",width=1024,height=768).generate(text)
-    wordcloud.to_file("./out/"+filename+".png")
-    print("Saved as out/"+filename+".png")
-
+    wordcloud.to_file("./out/LTL-"+filename+".png")
+    print("Saved as out/LTL-"+filename+".png")
 
 def main():
     t = 0
