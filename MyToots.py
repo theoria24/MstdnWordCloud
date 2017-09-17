@@ -35,7 +35,7 @@ def getToots(lim,max):
     ltl = mstdn.account_statuses(id,limit=lim,max_id=max)
     for row in ltl:
         if row["reblog"] == None: #ブーストを除外
-            if row["visibility"] not in ["private", "unlisted"]: # 公開範囲がプライベートと未収載のものを除外
+            if row["visibility"] in ["public"]: # 公開範囲がpublicものだけを選ぶ。private, unlistedも使用していい場合は追加してください。
                 text += format(row["content"]) + "\n"
                 toot_id = row["id"]
     return(text,toot_id)
