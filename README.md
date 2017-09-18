@@ -34,7 +34,7 @@ MeCabをPythonで扱うのに便利
 ## 使い方
 ### 設定
 1. このRepositoryをクローンするなりZipでダウンロードするなりする。
-1. なんとかして目的のMastodonの`client_id`、`client_secret`、`access_token`を入手する。
+1. なんとかして目的のMastodonの`client_id`、`client_secret`、`access_token`を入手する。（LTLの取得だけのときは`access_token`は不要）
 1. `config.sample.ini`をコピーするなりして`config.ini`を作成。
 1. 必要に応じて取得するトゥートの数を変更したり、除外するアカウントを指定したり画像サイズを設定したりする（コメントを見れば分かるはず…）。
 

@@ -16,7 +16,6 @@ def login():
     mstdn = Mastodon(
         client_id = config['client']['id'],
         client_secret = config['client']['secret'],
-        access_token = config['client']['token'],
         api_base_url = config['mastodon']['server'])
     return(mstdn)
 
