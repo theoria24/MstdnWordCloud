@@ -34,7 +34,7 @@ def getLTL(lim,max):
     for row in ltl:
         if row["account"]["username"] not in []: #除外するアカウントを配列で指定
             text += format(row["content"]) + "\n"
-            toot_id = row["id"]
+        toot_id = row["id"]
     return(text,toot_id)
 
 def wakati(text):

@@ -37,7 +37,7 @@ def getToots(lim,max):
         if row["reblog"] == None: #ブーストを除外
             if row["visibility"] in ["public"]: # 公開範囲がpublicものだけを選ぶ。private, unlistedも使用していい場合は追加してください。
                 text += format(row["content"]) + "\n"
-                toot_id = row["id"]
+        toot_id = row["id"]
     return(text,toot_id)
 
 def wakati(text):
